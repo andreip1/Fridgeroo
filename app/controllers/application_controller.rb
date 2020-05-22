@@ -1,5 +1,5 @@
 # require './config/environment'
-require '../../config.js'
+# require '../../config.js'
 class ApplicationController < Sinatra::Base
 
   configure do
@@ -28,7 +28,7 @@ class ApplicationController < Sinatra::Base
     @user = item.first.user
 
     food = params["id"].downcase
-    @this = HTTParty.get("https://api.edamam.com/search?q=#{food}&app_id=#{config.app_id}&app_key=#{config.app_key}")
+    @this = HTTParty.get("https://api.edamam.com/search?q=#{food}&app_id=#{API_ID}&app_key=#{API_KEY}")
 
 
    
