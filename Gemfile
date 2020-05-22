@@ -13,3 +13,4 @@ gem 'bcrypt'
 gem 'tux'
 gem 'httparty', '~> 0.18.0'
 gem 'figaro'
+gem "pg"  
