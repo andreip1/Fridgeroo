@@ -1,0 +1,21 @@
+<div class="w-full m-auto max-w-xs border-solid border-4 border-gray-600">
+
+  <div class="mb-4">
+    <label class="block text-black text-sm  font-bold mb-2 border-b-2" for="username"><%= @user.username %></label>
+  </div>   
+  <div class="mb-4">
+    <label class="block text-black text-sm  mb-2 border-b-2" for="fridge_name">Fridge's name: <%= @user.fridge.name %></label>
+  </div>   
+  <div class="mb-6">
+    <label class=" flex flex-col text-black text-sm mb-2 border-b-2" for="products">Their Items: <br>
+    <ul class="text-left px-5 m-auto">
+    <% @user.items.each do |item| %>
+      
+      <li class="text-blue-700 pt-4"> <%= item.name %></li>
+      <li class="text-green-700 pb-2">Expiration date: <%= item.expiry_date %></li>
+      <hr>
+    <% end %>
+    </ul>
+    </label>
+  </div>
+</div>

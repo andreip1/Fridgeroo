@@ -1,0 +1,14 @@
+# Models
+
+- User (more than one)
+- Items (A user has multiple items)
+- Fridge (Has multiple items/Has multiple users)
+
+## Validate uniqueness
+
+- through email
+
+User can only create, update or destroy their own items
+User can only read other's items
+
+Must check the uniqueness before login/the input is correct so we don't get blank entries in the database

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="text-center mb-6 mt-10">
+        <% if Helpers.is_logged_in?(session) %>
+            <div class="flex flex-col bg-gray-200 px-5 py-5">
+                <h1 class="text-5xl">Welcome to your dashboard,
+                    <%= Helpers.current_user(session).username %>!</h1>
+                <header class="flex items-center justify-center px-4 py-3 bg-gray-900">
+                    <div>
+                        <a class="text-white hover:text-indigo-200 text-center" href="/">Find Recipe </a>
+                        <a class="text-white hover:text-indigo-200 text-center" href="/edit_account">Edit Info</a>
+                        <a class="text-white hover:text-indigo-200 text-center ml-3" href="/fridge/new">Add a fridge </a>
+                        <a class="text-white hover:text-indigo-200 text-center ml-3" href="/fridge/my_fridge">This is your fridge </a>
+                        <a class="text-white hover:text-red-700 text-center ml-3" href="/delete_account">Delete Account </a>
+                        <a class="text-white hover:text-red-200 text-center ml-3" href="/logout">Log Out</a>
+                    </div>
+                </header>
+            </div>
+            <% else %>
+                <div class="flex flex-col bg-gray-200 px-5 py-5 justify-center">
+                    <h1 class="text-6xl  text-center">Welcome to Fridgeroo</h1>
+                    <h4 class="text-2xl text-center">Welcome to Fridgeroo. The fridge that is exacly like a Kangaroo, except for the fact that it's a fridge.</h4>
+                    <h5>Log in or sign up to create your fridge or see others'.</h5>
+                    <br>
+                    <h3>Click <a class="hover:text-blue-600" href="/login">here</a> to log in.</h3>
+                    <h3>Click <a class="hover:text-blue-600" href="/signup">here</a> to sign up.</h3>
+                </div>
+                <% end %>
+                    <%= yield %>
+    </div>
+    <script src="../../config.js"></script>
+</body>
+
+
+</html>

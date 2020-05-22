@@ -1,0 +1,27 @@
+
+<div class="w-full m-auto max-w-xs">
+<form class="bg-white shadow-md px-8 pt-6 pb-8" action="/fridges" method="post">
+<h1>Create your fridge</h1>
+  <div class="mb-4">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">Fridge's name</label>
+    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="name" id="name">
+  </div>   
+  <div class="mb-6">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="Items">Items - Separate them by a comma</label>
+    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="products" id="products">
+  </div>  
+  <div class="mb-6">
+    <label class="block flex flex-col align-center text-gray-700 text-sm font-bold mb-2" for="who_user">Whose is it?</label>
+    <ul>
+        <% @users.all.each do |user| %>
+            <li><input type="radio" name="whose_user[]" value="<%=user.username%>"> <%= user.username %></li>
+        <% end %>
+    </ul>
+  </div>  
+  <div class="flex items-center justify-center">
+    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+        Create
+    </button>
+  </div> 
+  </form> 
+</div> 

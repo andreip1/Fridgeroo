@@ -1,0 +1,25 @@
+<div class="w-full m-auto max-w-xs border-solid border-4 border-gray-600">
+<form action="/fridge/add_expiry_date" method="post">
+<input type="hidden" name="_method" value="patch">
+  <div class="mb-6">
+    <label class=" flex flex-col text-gray-700 text-sm font-bold mb-2 border-b-2" for="products">Your Items: <br>
+   
+    
+      <% @user.items.each do |item| %>
+      <% if !item.expiry_date %>
+        <%= item.name %> 
+        <label for="date">Expiry Date: </label>
+        <input style="width: 50%; align-self: center; border: 1px solid black;" type="date" name="items[][date]" id="date">
+        <input type="hidden" name="items[][id]" value="<%= item.id %>"> 
+         <br>
+      <% end %>
+      <% end %>
+    </label>
+  <div class="flex items-center justify-center">
+    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" >
+      Add Expiry date
+    </button>
+  </div> 
+</form>
+
+</div>

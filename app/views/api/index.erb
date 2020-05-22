@@ -1,0 +1,12 @@
+<h2>Hey, this is api stuff</h2>
+
+<h1 >Some of the recipes</h1>
+    <% @this["hits"].map do |x| %>
+      <a href=<%=x["recipe"]["url"]%>><h2 style="font-size: 50px;"><%= x["recipe"]["label"] %></h2></a>
+      <ul>
+        <% x["recipe"]["ingredients"].map do |y| %>
+        <li> <%= y["text"] %> </li>
+        <% end %>
+      </ul>
+    <%end%>
+

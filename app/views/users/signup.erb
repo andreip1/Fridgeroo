@@ -1,0 +1,30 @@
+
+<div class="w-full m-auto max-w-xs">
+
+<% if params["password_error"] == true %>
+    <h2 class="px-2 py-2 bg-red-500 text-white">Your passwords don't match. Try again!</h2>
+  <%elsif params["username_error"] == true%>
+    <h2 class="px-2 py-2 bg-red-500 text-white">There's already a user with that name! Try again!</h2>
+<%end%>
+<form class="bg-white shadow-md rounded px-8 pt-6 pb-8" action="/signup" method="post">
+<h1>Signup</h1>
+  <div class="mb-4">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="username">Username</label>
+    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" name="username" id="username">
+  </div>   
+  <div class="mb-6">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="password">Password</label>
+    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="password" name="password" id="password">
+  </div>  
+  <div class="mb-6">
+    <label class="block text-gray-700 text-sm font-bold mb-2" for="password_confirmation">Confirm password</label>
+    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="password" name="password_confirmation" id="password_confirmation">
+  </div>  
+  <div class="flex items-center justify-between">
+    <button class="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+        Sign Up
+    </button>
+    <a class="ml-1 hover:text-blue text-right" href="/login">Need to log in instead?</a>
+  </div> 
+  </form> 
+</div> 
