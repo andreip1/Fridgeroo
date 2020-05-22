@@ -9,5 +9,3 @@
 # production:
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
-app_id: "a0cf74e0"
-app_key: "482e30bd97b097e101f0e333ce1ec5d6"
